@@ -1,1 +1,10 @@
 body{background-color: azure;}
+
+#sign-up-form {
+    display: grid;
+    grid-template-columns: 1fr(repeat());
+    width: 10vh;
+    height: 50vh;
+    gap: 0.3em;
+}
+
