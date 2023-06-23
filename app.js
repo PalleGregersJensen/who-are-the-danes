@@ -10,7 +10,7 @@ function start() {
   console.log("JS kører");
 
 // Hent antallet af ledige pladser fra localStorage
-  vacantSeats = localStorage.getItem("NumberOfVacantSeats");
+  vacantSeats = localStorage.getItem("NumberOfVacantSeats", vacantSeats);
   if (vacantSeats === null) {
     vacantSeats = 50; // Standardværdi, hvis der ikke er noget gemt i localStorage
   } else {
