@@ -2,13 +2,24 @@
 
 let participants = [];
 
-let vacantSeats = 50;
+let vacantSeats;
 
 window.addEventListener("load", start);
 
 function start() {
   console.log("JS kører");
+
+// Hent antallet af ledige pladser fra localStorage
+  vacantSeats = localStorage.getItem("NumberOfVacantSeats");
+  if (vacantSeats === null) {
+    vacantSeats = 50; // Standardværdi, hvis der ikke er noget gemt i localStorage
+  } else {
+    vacantSeats = parseInt(vacantSeats); // Konverter værdien til et tal
+  }
+
   document.querySelector("#sign-up-form").addEventListener("submit", addParticipantToArray);
+  // Store
+  localStorage.setItem("NumerOfVacantSeats", vacantSeats)
 }
 
 function addParticipantToArray(event) {
@@ -44,6 +55,7 @@ function showNumerOfVacantSeats() {
   if (vacantSeats > 0) {
     vacantSeats--;
     document.querySelector("#vacant-seats").textContent = vacantSeats;
+    console.log(vacantSeats);
   } else {
   }
 }
