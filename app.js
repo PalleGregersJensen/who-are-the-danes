@@ -1,6 +1,8 @@
 "use strict";
 
-let participants = [];
+const endpoint = "https://who-are-the-danes-default-rtdb.firebaseio.com/"
+
+// let participants = [];
 
 let vacantSeats;
 
@@ -32,7 +34,7 @@ function addParticipantToArray(event) {
   const comments = form.comments.value;
   const newParticipant = createParticipant(name, age, email, phone, comments);
   console.log(newParticipant);
-  participants.push(newParticipant);
+  endpoint.push(newParticipant);
   console.log(participants);
   form.reset();
   showNumerOfVacantSeats();
